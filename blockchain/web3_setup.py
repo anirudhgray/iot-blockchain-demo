@@ -1,6 +1,6 @@
 from web3 import Web3
 
-# Function to set up Web3 connection (to Ganache in this example)
+# Function to set up Web3 connection (to Ganache here)
 def setup_web3():
     w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
     

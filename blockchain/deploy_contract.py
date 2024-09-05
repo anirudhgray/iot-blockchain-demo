@@ -24,7 +24,9 @@ def compile_contract():
 
 def deploy_contract():
     compiled_sol = compile_contract()
+    # Application Binary Interface (ABI) is a json that describes methods/events/etc in a smart contract
     abi = compiled_sol['contracts']['IoTData.sol']['IoTData']['abi']
+    # Bytecode is the compiled version of the smart contract
     bytecode = compiled_sol['contracts']['IoTData.sol']['IoTData']['evm']['bytecode']['object']
 
     # Create contract object

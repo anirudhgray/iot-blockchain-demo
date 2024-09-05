@@ -28,7 +28,7 @@ def store_iot_data_on_blockchain(iot_data):
     receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
     return receipt
 
-# Function to get stored IoT data (example)
+# Function to get stored IoT data from the blockchain
 def get_iot_data(index):
     return contract.functions.getData(index).call()
 
