@@ -31,3 +31,11 @@ def store_iot_data_on_blockchain(iot_data):
 # Function to get stored IoT data (example)
 def get_iot_data(index):
     return contract.functions.getData(index).call()
+
+# if as main, get iot data
+if __name__ == "__main__":
+    # Get stored IoT data
+    data_count = contract.functions.getDataCount().call()
+    for i in range(data_count-1):
+        iot_data = get_iot_data(i)
+        print(f"Stored IoT data at index {i}: {iot_data}")

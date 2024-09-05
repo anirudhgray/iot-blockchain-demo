@@ -5,7 +5,7 @@ import time
 def generate_iot_data():
     while True:
         # Simulate temperature and humidity data
-        temperature = random.uniform(15.0, 30.0)
+        temperature = random.uniform(15.0, 50.0)
         humidity = random.uniform(30.0, 70.0)
         
         # Simulate 5 device IDs and timestamps

@@ -34,3 +34,6 @@ python blockchain/deploy_contract.py
 python app.py
 ```
 3. You can now view blocks mined in the Ganache interface. You can also retrieve stored data using the helper functions in `interact_with_contract.py`
+```
+python3 blockchain/interact_with_contract.py
+```

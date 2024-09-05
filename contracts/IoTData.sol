@@ -12,6 +12,16 @@ contract IoTData {
     // Array to store sensor data
     SensorData[] public sensorDataRecords;
 
+    // Event to trigger an alert when critical temperature is detected
+    event CriticalTemperatureAlert(
+        uint256 deviceId,
+        uint256 temperature,
+        uint256 timestamp
+    );
+
+    // Critical temperature threshold (can be set to any value)
+    uint256 public criticalTemperature = 40;
+
     // Function to store IoT data
     function storeData(
         uint256 _deviceId,
@@ -26,6 +36,16 @@ contract IoTData {
             timestamp: block.timestamp
         });
         sensorDataRecords.push(newData);
+
+        // Check if the temperature exceeds the critical threshold
+        if (_temperature > criticalTemperature) {
+            // Trigger the event for critical temperature
+            emit CriticalTemperatureAlert(
+                _deviceId,
+                _temperature,
+                block.timestamp
+            );
+        }
     }
 
     // Function to get the number of stored records
